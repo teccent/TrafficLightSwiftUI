@@ -38,6 +38,7 @@ struct ContentView: View {
         }
     }
     
+    
     private func nextColor() {
         switch currentLight {
             case .red:

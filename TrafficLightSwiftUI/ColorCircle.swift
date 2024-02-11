@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct ColorCircle: View {
+    let color: Color
+    let opacity: Double
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Circle()
+            .foregroundStyle(color)
+            .opacity(opacity)
+            .frame(width: 120)
+            .overlay(Circle()
+                .stroke(Color.white, lineWidth: 4))
+        
     }
 }
 
 #Preview {
-    ColorCircle()
+    ColorCircle(color: .red, opacity: 1)
 }

@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct ChangeColorButton: View {
+    let title: String
+    let action: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: action) {
+            Text(title)
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundStyle(.white)
+                .padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30))
+        }
+        .padding()
+        .frame(width: 200, height: 60)
+        .buttonStyle(.borderedProminent)
+        .tint(.blue)
+
     }
 }
 
 #Preview {
-    ChangeColorButton()
+    ChangeColorButton(title: "Start", action: {})
 }
